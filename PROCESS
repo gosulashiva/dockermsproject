@@ -66,7 +66,7 @@ pipeline {
     stages {
         stage('checkout') {
             steps {
-                git 'https://github.com/devopsbyraham/dockermsproject.git'
+                git 'https://github.com/gosulashiva/dockermsproject.git'
             }
         }
         stage('build') {
@@ -81,7 +81,7 @@ pipeline {
         }
         stage('push') {
             steps {
-                sh 'docker login -u rahamshaik -p $password'
+                sh 'docker login -u shivagosula -p $password'
                 sh 'docker push $repo'
             }
         }
@@ -104,7 +104,7 @@ systemctl restart docker.service
 version: '3'
 services:
   devops:
-    image: rahamshaik/devopsreponit:latest
+    image: shivagosula/devopsreponit:latest
     ports:
       - "80:80"
     volumes:
@@ -113,7 +113,7 @@ services:
       replicas: 3
 
   aws:
-    image: rahamshaik/awsreponit:latest
+    image: shivagosula/awsreponit:latest
     ports:
       - "81:80"
     volumes:
@@ -122,7 +122,7 @@ services:
       replicas: 3
 
   datascience:
-    image: rahamshaik/datasciencereponit:latest
+    image: shivagosula/datasciencereponit:latest
     ports:
       - "82:80"
     volumes:
@@ -131,7 +131,7 @@ services:
       replicas: 3
 
   azure:
-    image: rahamshaik/azurereponit:latest
+    image: shivagosula/azurereponit:latest
     ports:
       - "83:80"
     volumes:
