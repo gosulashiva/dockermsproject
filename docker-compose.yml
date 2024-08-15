@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   movies:
-    image: shivagosula/paytmmovies:latest
+    image: shiva256/paytmmovies:latest
     ports:
       - "81:80"
     deploy:
@@ -9,7 +9,7 @@ services:
     volumes:
       - "movies"
   train:
-    image: shivagosula/paytmtrain:latest
+    image: shiva256/paytmtrain:latest
     ports:
       - "82:80"
     deploy:
@@ -17,7 +17,7 @@ services:
     volumes:
       - "train"
   dth:
-    image: shivagosula/paytmdth:latest
+    image: shiva256/paytmdth:latest
     ports:
       - "83:80"
     deploy:
@@ -25,7 +25,7 @@ services:
     volumes:
       - "dth"
   recharge:
-    image: shivagosula/paytmrecharge:latest
+    image: shiva256/paytmrecharge:latest
     ports:
       - "84:80"
     deploy:
